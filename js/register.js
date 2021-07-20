@@ -55,10 +55,14 @@ const regFormValidation = () => {
       dataArray[index].classList.remove("border-success");
     }
   });
+  console.log(counter);
   //final validation and registration
   if (counter === 0) {
     console.log(regData);
     showMessageRegistration();
+    localStorage.setItem("username", regData.username);
+    localStorage.setItem("password", regData.password);
+    localStorage.setItem("email", regData.email);
     return regData;
   }
 };
