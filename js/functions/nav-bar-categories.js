@@ -1,4 +1,5 @@
 const categories_list = document.querySelector("#categories_list");
+const user = localStorage.getItem("username");
 
 const allCategories = () => {
 
@@ -8,8 +9,14 @@ const allCategories = () => {
   categories.forEach(element => {
     html += `<li class="nav-item py-0 px-5 border-end border-white lh-lg list" data-category="${element}">${element.toUpperCase()}`;
   });
-  html += `<li class="nav-item py-0 px-5 border-end border-white lh-lg"><a href='login.html'>LOG IN</a></li>
+
+  if(user !== null) {
+    html += `<li class="nav-item py-0 px-5 border-end border-white lh-lg"><a href='login.html'>Welcome, ${user}</a></li>`;
+  } else {
+    html += `<li class="nav-item py-0 px-5 border-end border-white lh-lg"><a href='login.html'>LOG IN</a></li>
           <li class="nav-item py-0 px-5 lh-lg"><a href='register.html'>REGISTER</a></li>`;
+  }
+  
   categories_list.innerHTML = html;
 
   let list = document.querySelectorAll(".list");

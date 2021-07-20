@@ -1,31 +1,28 @@
-import { User } from "../class/users.class.js";
-import { AllUsers } from "../class/allUsers.class.js";
-import { fetchUsersJson  } from "./endpoints.js";
 
-const allUsers = new AllUsers();
+const username = document.querySelector("#username");
+const password = document.querySelector("#password");
+const divError = document.querySelector("#validation");
 
-if(localStorage.getItem("user") !== null) {
-  const objectLocalStorage = JSON.parse(localStorage.getItem("user"));
-  const user = new User(objectLocalStorage.name, objectLocalStorage.lastname, objectLocalStorage.email, objectLocalStorage.username, objectLocalStorage.password);
-  allUsers.addUser(user);
-}
+const logInValidation = (data) => {
 
+  if(!username.value || !password.value) {
+    divError.innerHTML = "<p>All fields are required.</p>";
+    return false; 
+  }
 
-fetchUsersJson()
- .then(data => {
-   const json = data;
+  for(let i = 0; i < data.length; i++) {
 
-   json.forEach(element => {
-     let userObj = new User(element.name, element.lastname, element.email, element.username, element.password);
-     allUsers.addUser(userObj);
-   });
+    if(data[i].username === username.value && data[i].password === password.value) {  
 
-   console.log(allUsers.userList);
- });
+      localStorage.setItem("username", username.value);
+      window.location.assign("index.html");
+      break;
+    } else {
+      divError.innerHTML = "<p>Wrong username or password</p>";
+    }
+  }
+};
 
-const loginValidation = () => {
+export {logInValidation};
 
-  
-
-}
 

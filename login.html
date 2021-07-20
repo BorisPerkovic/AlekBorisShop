@@ -16,7 +16,7 @@
 
   <!-- JavaScirpt files -->
   <script src="js/functions/nav-bar-categories.js" defer></script>
-  <script src="js/functions/login_validation.js" type="module" defer></script>
+  <script src="js/login.js" type="module" defer></script>
 
   <title>eShop | WebApp</title>
 </head>
@@ -56,16 +56,16 @@
         <div class="input-group">
           <div class="input-group flex-nowrap mt-3">
             <span class="input-group-text" id="addon-wrapping-username"><i class="fas fa-user-tie"></i></span>
-            <input type="text" id="regUsername" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping-username" required>
+            <input type="text" id="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping-username" required>
           </div><br>
           <div class="input-group flex-nowrap mt-3">
             <span class="input-group-text" id="addon-wrapping-password"><i class="fas fa-unlock-alt"></i></span>
-            <input type="password" id="regPassword" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping-password" required>
+            <input type="password" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping-password" required>
           </div><br>
-          <div class="text-danger" id="validation">
-          </div><br>
+          <div class="text-danger mt-3" id="validation">
+          </div>
         </div>
-        <button id="regBtn" class="btn btn-success form-control mt-3">LOG IN</button>
+        <button id="loginBtn" class="btn btn-success form-control mt-3">LOG IN</button>
       </article>
   </section>
 </div>
