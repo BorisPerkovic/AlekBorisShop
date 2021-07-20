@@ -1,0 +1,37 @@
+[
+  {
+    "name" : "Aleksandar",
+    "lastname" : "Bisevac",
+    "email" : "alek@gmail.com",
+    "username" : "alek",
+    "password" : "Alekns20" 
+  },
+  {
+    "name" : "Boris",
+    "lastname" : "Perkovic",
+    "email" : "bboris@gmail.com",
+    "username" : "risbo",
+    "password" : "Risbo200" 
+  },
+  {
+    "name" : "Nikola",
+    "lastname" : "Draganic",
+    "email" : "bakari@gmail.com",
+    "username" : "bakari",
+    "password" : "bakari10" 
+  },
+  {
+    "name" : "Dario",
+    "lastname" : "Stamenkovic",
+    "email" : "dado@gmail.com",
+    "username" : "dariodado",
+    "password" : "dariodado1" 
+  },
+  {
+    "name" : "Ivan",
+    "lastname" : "Balic",
+    "email" : "ivan@gmail.com",
+    "username" : "ivan",
+    "password" : "ivanbalic1" 
+  }
+]

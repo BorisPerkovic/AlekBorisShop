@@ -16,4 +16,10 @@ const fetchSingleProduct = (id) => {
     .then( response => response.json());
 }
 
-export { fetchAllProducts, fetchSingleProduct, fetchProductsByCategory };
+const fetchUsersJson = () => {
+  const endpointUsers = "js/users.json";
+  return fetch(endpointUsers)
+    .then( response => response.json());
+}
+
+export { fetchAllProducts, fetchSingleProduct, fetchProductsByCategory, fetchUsersJson };

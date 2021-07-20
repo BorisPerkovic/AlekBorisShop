@@ -1,3 +1,4 @@
+
 const articleDiv = document.querySelector("#form");
 const mainSection = document.querySelector("main");
 
@@ -11,6 +12,22 @@ const nameValidation = (name) => {
   } else {
     return null;
   }
+};
+
+/* validating usename function */
+const usernameValidation = (name, objArray) => {
+
+    for(let i = 0; i < objArray.length; i++) {
+      if (objArray[i].username == name) {
+        return null;
+      }
+    }
+
+    if ( name !== "") {
+      return name;
+    } else {
+      return null;
+    }
 };
 
 /* validating password function */
@@ -40,7 +57,14 @@ const passwordValidation = (password) => {
 };
 
 /* validating email function */
-const emailValidation = (email) => {
+const emailValidation = (email, objArray) => {
+
+  for(let i = 0; i < objArray.length; i++) {
+    if (objArray[i].email == email) {
+      return null;
+    }
+  }
+
   if (
     email.split("").filter((element) => element === "@").length === 1 &&
     email
@@ -70,4 +94,5 @@ export {
   emailValidation,
   passwordValidation,
   showMessageRegistration,
+  usernameValidation
 };
