@@ -4,7 +4,7 @@ class User {
     this.lastname = lastname,
     this.email = email,
     this.username = username,
-    this.password = password,
+    this.password = password
   }
 }
 

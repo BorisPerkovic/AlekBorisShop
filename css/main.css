@@ -75,3 +75,11 @@ li:hover {
 .hide {
   display: none !important;
 }
+
+#tbody img {
+  max-height: 40px;
+}
+
+.fa-trash-alt:hover {
+  cursor: pointer;
+}

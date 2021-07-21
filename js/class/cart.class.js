@@ -1,12 +1,10 @@
-import { Products } from "./products.class.js";
-
 class Cart {
   constructor() {
     this.cartList = [];
   }
 
   addToCart (obj) {
-    if(obj instanceof Products)
+    if(obj)
     this.cartList.push(obj);
   }
 

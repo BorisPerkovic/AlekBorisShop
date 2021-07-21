@@ -1,7 +1,6 @@
 import { Products } from "../class/products.class.js";
 import { ShowProducts } from "../class/getproducts.class.js";
 import { Cart } from "../class/cart.class.js";
-import { AllUsers } from "../class/allUsers.class.js";
 
 const products = new ShowProducts();
 const cart = new Cart();
@@ -9,6 +8,14 @@ const cart = new Cart();
 const producst_list = document.querySelector("#products_list");
 const spinner = document.querySelector("#spinner");
 const footer = document.querySelector("#footer");
+const cartNumber = document.querySelectorAll(".cartNumber");
+
+if(localStorage.getItem("shopCart") !== null) {
+  const shopCart = JSON.parse(localStorage.getItem("shopCart"));
+  shopCart.forEach(element => cart.addToCart(element));
+  cartNumber.forEach(element => element.textContent = cart.cartList.length);
+}
+
 
 const productArticle = (data) => {
 
@@ -34,11 +41,21 @@ const productArticle = (data) => {
 
     cartbtn.forEach((element, index) => {
       element.setAttribute("data-id", index);
+
       element.addEventListener("click", (event) => {
-        event.stopImmediatePropagation();
-        let id = element.getAttribute("data-id");
-        cart.addToCart(products.productsList[id]);
-        console.log(cart.cartList);
+
+        if(localStorage.getItem("username") !== null) {
+          event.stopImmediatePropagation();
+          let id = element.getAttribute("data-id");
+          cart.addToCart(products.productsList[id]);
+          cartNumber.forEach(element => element.textContent = cart.cartList.length);
+          let cartToStorage = JSON.stringify(cart.cartList);
+          localStorage.setItem(`shopCart`, cartToStorage);
+        } else {
+          alert("You must be log in to add product to cart!");
+          event.stopImmediatePropagation();
+        }
+        
       });
     });
     
