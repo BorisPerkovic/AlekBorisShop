@@ -13,27 +13,25 @@ if(localStorage.getItem("shopCart") !== null) {
 }
 
 const cartTable = () => {
-  let html = "";
-  cart.cartList.forEach(element => {
-  html += `<tr>
-                <td><img src='${element.productsImg}' alt='${element.productTitle}'></td>
-                <td class='mt-5'>${element.productTitle}</td>
-                <td>${element.productPrice}</td>
-                <td class='cartTrash'><i class="fas fa-trash-alt"></i></td>
-            </tr>`;
-  });
-  tbody.innerHTML = html;
-  deleteItem();
-}
 
+  tbody.innerHTML = cart.getCart();
 
-const deleteItem = (element) => {
+  let tr = document.querySelectorAll(".tr");
+  const cartTrash = document.querySelectorAll(".cartTrash");
 
-      let id = element.getAttribute("data-id");
-      cart.cartList.splice(id, 1);
+  cartTrash.forEach((element, index) => {
+    element.addEventListener("click", () => {
+      console.log(index);
+      console.log(element);
+      tr[index].remove();
+      cart.cartList.splice(index, 1);
       cartNumber.forEach(element => element.textContent = cart.cartList.length);
       let cartToStorage = JSON.stringify(cart.cartList);
       localStorage.setItem("shopCart", cartToStorage);
-      //cartTable();
+    });
+  });
+  
+  
 }
-export {cartTable , deleteItem };
+
+export {cartTable};
