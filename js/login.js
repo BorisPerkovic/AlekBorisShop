@@ -27,7 +27,6 @@ loginBtn.addEventListener("click", () => {
 
     return allUsers;
   }).then(data => {
-    
     logInValidation(data.userList);
   });
   
