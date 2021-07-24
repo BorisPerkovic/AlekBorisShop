@@ -1,3 +1,7 @@
+/*================================================== 
+ -endpoints for API requiests and users.json
+===================================================*/
+
 const fetchAllProducts = () => {
   const endpointAllProducts= `https://fakestoreapi.com/products/`;
   return fetch(endpointAllProducts)
@@ -22,4 +26,5 @@ const fetchUsersJson = () => {
     .then( response => response.json());
 }
 
+/* export endpoint */
 export { fetchAllProducts, fetchSingleProduct, fetchProductsByCategory, fetchUsersJson };

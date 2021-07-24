@@ -1,3 +1,10 @@
+/*================================================== 
+ All User class
+ -creating list of all users from users.json file and for new register user
+ -having methods for register form validation 
+===================================================*/
+
+/* import user class for creating instaces of users for creating user list */
 import { User } from "./users.class.js";
 
 class AllUsers {
@@ -11,6 +18,7 @@ class AllUsers {
     }
   };
 
+  /* name validation method */
   nameValidation(name){
     if (name !== "" && name.split("").every((element) => parseInt(element) !== parseInt(element))) {
       return true;
@@ -19,6 +27,7 @@ class AllUsers {
     }
   };
 
+  /* lastname validation method */
   lastnameValidation(lastname){
     if (lastname !== "" && lastname.split("").every((element) => parseInt(element) !== parseInt(element))) {
       return true;
@@ -27,6 +36,7 @@ class AllUsers {
     }
   };
 
+  /* password uppercase validation method */
   checkPasswordUpperCase (pass) {
     return pass
       .split("")
@@ -34,12 +44,14 @@ class AllUsers {
       .some((element) => element === element.toUpperCase());
   };
 
+  /* password number validation method */
   checkPasswordNumber (pass) {
     return pass
       .split("")
       .some((element) => parseInt(element) === parseInt(element));
   };
 
+  /* email validation method */
   checkEmail (email) {
     if (
       email !== "" && email.split("").filter((element) => element === "@").length === 1 &&
@@ -55,6 +67,7 @@ class AllUsers {
     return false;
   };
 
+  /* email exists validation method */
   checkEmailExists (email, array) {
 
     for(let i = 0; i < array.length; i++) {
@@ -66,6 +79,7 @@ class AllUsers {
     return true;
   };
 
+  /* username validation method */
   checkUsernameExists (username, array) {
 
     for(let i = 0; i < array.length; i++) {
@@ -78,4 +92,5 @@ class AllUsers {
   };
 };
 
+/* export all users class */
 export { AllUsers };

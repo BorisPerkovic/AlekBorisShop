@@ -1,3 +1,9 @@
+/*================================================== 
+ ShowProducts class
+ -creating products list from fake store API and displaying on screen
+ -having methods for creating products article card
+===================================================*/
+
 class ShowProducts {
   constructor() {
     this.productsList = [];
@@ -6,7 +12,7 @@ class ShowProducts {
   addProduct(object) {
     this.productsList.push(object);
   }
-
+  /*  products article cards */
   getProducts() {
     let html = "";
     this.productsList.forEach(element => {
@@ -31,4 +37,5 @@ class ShowProducts {
 
 };
 
+/* export show products class */
 export { ShowProducts };

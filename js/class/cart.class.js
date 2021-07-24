@@ -1,3 +1,9 @@
+/*================================================== 
+ Cart class
+ -creating cart list when user click on add to cart button
+ -having methods for creating cart table and sum of order
+===================================================*/
+
 class Cart {
   constructor() {
     this.cartList = [];
@@ -8,6 +14,7 @@ class Cart {
     this.cartList.push(obj);
   }
 
+  /* cart table */
   getCart() {
     let html = "";
     this.cartList.forEach((element , index)=> {
@@ -22,6 +29,7 @@ class Cart {
     return html;
   }
 
+  /* sum of order */
   orderSum() {
     let sum = 0;
     this.cartList.forEach(element => sum += element.productPrice);
@@ -30,4 +38,5 @@ class Cart {
 
 };
 
+/* export cart class */
 export { Cart };

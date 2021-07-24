@@ -1,13 +1,24 @@
+/*================================================== 
+  -function for displaying products from cart list
+  -allow user to remove product from cart table
+  -allow user order products from cart table
+================================================== */
+
+/* import all necessary classes and functions */
 import { Cart } from "../class/cart.class.js";
 
+/* html handlers */
 const cartNumber = document.querySelectorAll(".cartNumber");
 const table = document.querySelector("#table");
 const tbody = document.querySelector("#tbody");
 const emptyCart = document.querySelector("#emptyCart");
 const sum = document.querySelector("#sum");
 const orderBtn = document.querySelector("#orderBtn");
+
+/* instance for cart */
 const cart = new Cart();
 
+/* check if in local storage are set shopCart object, if it is add it to Cart class  and create table body*/
 if(localStorage.getItem("shopCart") !== null) {
   const shopCart = JSON.parse(localStorage.getItem("shopCart"));
   shopCart.forEach(element => cart.addToCart(element));
@@ -17,20 +28,21 @@ if(localStorage.getItem("shopCart") !== null) {
   emptyCart.classList.remove("hide");
 }
 
-
+/* function for remove product from cart table or order products */
 const cartTable = () => {
 
   sum.textContent = cart.orderSum();
 
   let tr = document.querySelectorAll(".tr");
   let cartTrash = document.querySelectorAll(".cartTrash");
-
   let cartToStorage = cart.cartList;
 
+  /* on click trash icon remove selected product from table and from cart list */
   cartTrash.forEach((element) => {
     element.addEventListener("click", () => {
 
       if(confirm("You are about to remove product from cart! Are you sure?")) {
+
         let index = element.getAttribute("data-index");
         let id = element.getAttribute("data-id");
 
@@ -58,6 +70,7 @@ const cartTable = () => {
     });
   });
 
+  /* on click order button, remove shopCart item from local storage - simulating real order all products from table  */
   orderBtn.addEventListener("click", () => {
 
     if(confirm("You are about to order products! Are you sure?")) {
@@ -70,6 +83,7 @@ const cartTable = () => {
 
   });
 
-}
+};
 
+/* export cartTable function */
 export {cartTable};

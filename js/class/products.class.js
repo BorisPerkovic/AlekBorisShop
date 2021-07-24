@@ -1,3 +1,8 @@
+/*================================================== 
+ Products class
+ -creating products instances before add to ShowProducts list
+===================================================*/
+
 class Products {
   constructor(id, image, title, decsription, price) {
     this.productID = id;
@@ -8,4 +13,5 @@ class Products {
   };
 };
 
+/* export products class */
 export { Products };
