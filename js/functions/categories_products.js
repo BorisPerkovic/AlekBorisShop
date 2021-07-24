@@ -13,7 +13,6 @@ const cartNumber = document.querySelectorAll(".cartNumber");
 if(localStorage.getItem("shopCart") !== null) {
   const shopCart = JSON.parse(localStorage.getItem("shopCart"));
   shopCart.forEach(element => cart.addToCart(element));
-  cartNumber.forEach(element => element.textContent = cart.cartList.length);
 }
 
 const categoryRequest = ( data ) => {

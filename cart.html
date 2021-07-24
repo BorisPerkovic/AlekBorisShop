@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/main.css">
 
   <!-- JavaScirpt files -->
-  <script src="js/functions/nav-bar-categories.js" defer></script>
+  <script src="js/functions/nav-bar-categories.js" type="module" defer></script>
   <script src="js/cart.js" type="module" defer></script>
 
   <title>eShop | WebApp</title>
@@ -50,9 +50,9 @@
 <!-- main section -->
 <main class="container-fluid">
 <div class="container">
-  <h1 class="display-3 text-center py-4">SHOPING CART</h1>
-  <section class="row">
-      <article class="col-md-8 mx-auto text-center" id="table">
+  <h1 class="display-3 text-center py-4">SHOPPING CART</h1>
+  <section class="row hide" id="table">
+      <article class="col-md-8 mx-auto text-center">
           <table class="table table-hover">
             <thead>
               <th>image</th>
@@ -66,11 +66,19 @@
           </table>
       </article>
 
-      <article class="col-md-8 mx-auto text-center hide" id="emptyCart">
-        <h4>Your shopping cart is empty. Please, add some product to shoping cart</h4>
-        <p><i class="fas fa-shopping-cart"></i></p>
-      </article>
+      <div class="col-md-8 mx-auto d-flex justify-content-between mt-4">
+        <button class="btn btn-success" id="orderBtn">Order</button>
+        <h5 class="mt-4">Order sum: <span id="sum"></span> USD</h5>
+      </div>
   </section>
+
+  <section class="row hide" id="emptyCart">
+    <article class="col-md-10 mx-auto mt-5 text-center">
+      <h4>Your shopping cart is empty. Please, add some product to shoping cart.</h4>
+      <p class="mt-4"><i class="fas fa-shopping-cart fs-1"></i></p>
+    </article>
+  </section>
+  
 </div>
 </main>
 <!-- end main section -->

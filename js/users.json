@@ -25,13 +25,13 @@
     "lastname" : "Stamenkovic",
     "email" : "dado@gmail.com",
     "username" : "dariodado",
-    "password" : "dariodado1" 
+    "password" : "Dariodado1" 
   },
   {
     "name" : "Ivan",
     "lastname" : "Balic",
     "email" : "ivan@gmail.com",
     "username" : "ivan",
-    "password" : "ivanbalic1" 
+    "password" : "Ivanbalic1" 
   }
 ]
