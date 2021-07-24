@@ -18,7 +18,7 @@ const allCategories = () => {
                 </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="cart.html">Cart <span class="cartNumber">0</span></a></li>
-                <li><a class="dropdown-item" href="#">Account</a></li>
+                <li><a class="dropdown-item" href="account.html">Account</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li id='logout'><a class="dropdown-item" href="#">Logout</a></li>
               </ul>

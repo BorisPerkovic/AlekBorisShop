@@ -15,6 +15,7 @@ const logInValidation = (data) => {
     if(data[i].username === username.value && data[i].password === password.value) {  
 
       localStorage.setItem("username", username.value);
+      localStorage.setItem("user", JSON.stringify(data[i]));
       divError.innerHTML = "";
       window.location.assign("index.html");
       break;

@@ -16,7 +16,7 @@
 
   <!-- JavaScirpt files -->
   <script src="js/functions/nav-bar-categories.js" type="module" defer></script>
-  <script src="js/cart.js" type="module" defer></script>
+  <script src="js/account.js" type="module" defer></script>
 
   <title>eShop | WebApp</title>
 </head>
@@ -50,35 +50,53 @@
 <!-- main section -->
 <main class="container-fluid">
 <div class="container">
-  <h1 class="display-3 text-center py-4">SHOPPING CART</h1>
-  <section class="row hide" id="table">
-      <article class="col-md-8 mx-auto text-center">
-          <table class="table table-hover">
-            <thead>
-              <th>image</th>
-              <th>title</th>
-              <th>price</th>
-              <th>remove</th>
-            </thead>
-            <tbody id="tbody">
+  <h1 class="display-3 text-center py-4">ACCOUNT</h1>
+  <section class="row d-flex justify-content-center">
+      <article class="col-md-6 mx-auto">
 
-            </tbody>
-          </table>
+        <div class="row">
+
+          <div class="col-md-3">
+            <p class="mt-2">Name:</p>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="name" class="form-control inputs" aria-label="First Name" aria-describedby="addon-wrapping-firstname" disabled>
+          </div>
+
+          <div class="col-md-3">
+            <p class="mt-2">Lastname:</p>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="lastname" class="form-control inputs" aria-label="First Name" aria-describedby="addon-wrapping-firstname" disabled>
+          </div>
+
+          <div class="col-md-3">
+            <p class="mt-2">Email address:</p>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="email" class="form-control inputs" aria-label="First Name" aria-describedby="addon-wrapping-firstname" disabled>
+          </div>
+
+          <div class="col-md-3">
+            <p class="mt-2">Username:</p>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="username" class="form-control inputs" aria-label="First Name" aria-describedby="addon-wrapping-firstname" disabled>
+          </div>
+
+          <div class="col-md-3">
+            <p class="mt-2">Password:</p>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="password" class="form-control inputs" aria-label="First Name" aria-describedby="addon-wrapping-firstname" disabled>
+          </div>
+
+        </div>
+
+        <button id="changeDatabtn" class="btn btn-success form-control mt-3">Change data</button>
+        <button id="saveDatabtn" class="btn btn-success form-control mt-3 hide">Save data</button>
       </article>
-
-      <div class="col-md-8 mx-auto d-flex justify-content-between mt-4">
-        <button class="btn btn-success" id="orderBtn">Order</button>
-        <h5 class="mt-4">Order sum: <span id="sum"></span> USD</h5>
-      </div>
   </section>
-
-  <section class="row hide" id="emptyCart">
-    <article class="col-md-10 mx-auto mt-5 text-center">
-      <h4>Your shopping cart is empty. Please, add some product to shopping cart.</h4>
-      <p class="mt-4"><i class="fas fa-shopping-cart fs-1"></i></p>
-    </article>
-  </section>
-  
 </div>
 </main>
 <!-- end main section -->
