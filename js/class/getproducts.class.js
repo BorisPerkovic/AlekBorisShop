@@ -16,7 +16,7 @@ class ShowProducts {
   getProducts() {
     let html = "";
     this.productsList.forEach(element => {
-      html += `<article class='col-lg-3 col-md-4 col-sm-6 col-10 mx-auto mb-2 px-2'>
+      html += `<article class='col-lg-3 col-md-4 col-sm-6 col-10 mb-2 px-2 center'>
                 <div class="p-2 d-flex flex-column h-100 border rounded shadow article" data-id='${element.productID}'>
                   <div class='img_handler'>
                     <img src='${element.productsImg}' class='img-fluid' alt='${element.productTitle}'>

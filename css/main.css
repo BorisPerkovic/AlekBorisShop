@@ -112,6 +112,10 @@ li:hover {
     border-right: none !important;
   }
 
+  .center {
+    margin: 8px auto !important;
+  }
+
   .img_handler {
     height: 32%;
     width: 100%;
