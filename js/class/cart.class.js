@@ -33,7 +33,7 @@ class Cart {
   orderSum() {
     let sum = 0;
     this.cartList.forEach(element => sum += element.productPrice);
-    return sum;
+    return sum = sum.toFixed(2);
   };
 
 };

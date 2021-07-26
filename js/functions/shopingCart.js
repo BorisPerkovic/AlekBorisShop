@@ -48,7 +48,8 @@ const cartTable = () => {
 
         for(let i = 0; i < cartToStorage.length; i++) {
           if(cartToStorage[i].productID == id) {
-            sum.textContent = parseFloat(sum.textContent) - parseFloat(cartToStorage[i].productPrice);
+            let sumTwoDecimals = parseFloat(sum.textContent) - parseFloat(cartToStorage[i].productPrice);
+            sum.textContent = sumTwoDecimals.toFixed(2);
             cartToStorage.splice(i, 1);
             break;
           }

@@ -14,6 +14,7 @@ const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const changeDataBtn = document.querySelector("#changeDatabtn");
 const saveDataBtn = document.querySelector("#saveDatabtn");
+const cancelDatabtn = document.querySelector("#cancelDatabtn");
 const inputs = document.querySelectorAll(".inputs");
 
 /* change data function */
@@ -30,6 +31,7 @@ const changeData = () => {
     inputs.forEach(element => element.removeAttribute("disabled"));
     changeDataBtn.classList.add("hide");
     saveDataBtn.classList.remove("hide");
+    cancelDatabtn.classList.remove("hide");
   });
 
   /* on click save data button, saving users data from input fields and creating user item in local storage */
@@ -49,6 +51,15 @@ const changeData = () => {
         localStorage.setItem("user", changeUser);
         window.location.reload();
     }
+  });
+
+  /* on click cancel data button, reload page without saving any changes */
+  cancelDatabtn.addEventListener("click", () => {
+    
+    if(confirm("You are about to cancel without saving! Are you sure?")) {
+      window.location.reload(); 
+    }
+
   });
 
 }

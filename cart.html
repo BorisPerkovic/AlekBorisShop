@@ -53,22 +53,29 @@
   <h1 class="display-3 text-center py-4">SHOPPING CART</h1>
   <section class="row hide" id="table">
       <article class="col-md-8 mx-auto text-center">
-          <table class="table table-hover">
-            <thead>
-              <th>image</th>
-              <th>title</th>
-              <th>price</th>
-              <th>remove</th>
-            </thead>
-            <tbody id="tbody">
-
-            </tbody>
-          </table>
+            <table class="table table-hover">
+              <thead>
+                <th>image</th>
+                <th>title</th>
+                <th>price</th>
+                <th>remove</th>
+              </thead>
+              <tbody id="tbody">
+  
+              </tbody>
+            </table>
       </article>
 
-      <div class="col-md-8 mx-auto d-flex justify-content-between mt-4">
-        <button class="btn btn-success" id="orderBtn">Order</button>
-        <h5 class="mt-4">Order sum: <span id="sum"></span> USD</h5>
+      <div class="col-md-8 mx-auto mt-4">
+        <div class="row">
+            <div class="col-md-3">
+              <button class="btn form-control btn-success" id="orderBtn">Order</button>
+            </div>
+
+            <div class="col-md-9 text-end sum">
+              <h5 class="mt-2">Order sum: <span id="sum"></span> USD</h5>
+            </div>
+        </div>
       </div>
   </section>
 
@@ -88,7 +95,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 pt-3 pb-1">
-      <p class="text-center">Copyright &copy; Aleksandar Bisevac | Boris Perkovic | BiT Students 2021</p>
+      <p class="text-center text-white">Copyright &copy; Aleksandar Bisevac | Boris Perkovic | BiT Students 2021</p>
     </div>
   </div>
 </div>
